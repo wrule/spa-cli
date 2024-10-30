@@ -20,6 +20,10 @@ export default {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: srcPath('index.html'),
+      hash: true,
+      // favicon: '',
+    }),
   ],
 };
