@@ -2,7 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { myPath, srcPath } from '../utils/myPath.js';
 
 export default {
-  entry: srcPath('index.ts'),
+  entry: srcPath('index.tsx'),
   output: {
     path: myPath('dist'),
     filename: 'index.js',
