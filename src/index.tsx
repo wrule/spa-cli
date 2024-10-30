@@ -1,8 +1,13 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
 async function main() {
-  const a: number = 1;
-  const b: number = 3;
-  console.log(a + b);
+  createRoot(document.getElementById('root')!)
+    .render(
+      <StrictMode>
+        <span>1234</span>
+      </StrictMode>,
+    );
 }
 
 main();
