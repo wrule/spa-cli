@@ -22,6 +22,14 @@ export default {
           loader: 'swc-loader',
         },
       },
+      {
+        test: /\.(css)$/i,
+        exclude: /(node_modules)/,
+        use: [
+          'style-loader',
+          'postcss-loader',
+        ],
+      },
     ],
   },
   plugins: [
