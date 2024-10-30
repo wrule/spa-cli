@@ -4,19 +4,22 @@
     "parser": {
       "syntax": "typescript",
       "jsx": true,
-      "dynamicImport": false,
+      "tsx": true,
+      "dynamicImport": true,
       "privateMethod": false,
       "functionBind": false,
       "exportDefaultFrom": false,
       "exportNamespaceFrom": false,
-      "decorators": false,
+      "decorators": true,
       "decoratorsBeforeExport": false,
       "topLevelAwait": false,
-      "importMeta": false
+      "importMeta": true
     },
     "transform": {
       "react": {
-        "runtime": "automatic"
+        "runtime": "automatic",
+        "refresh": true,
+        "useBuiltins": true
       }
     },
     "target": "es5",
