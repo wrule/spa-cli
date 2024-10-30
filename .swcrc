@@ -20,6 +20,9 @@
         "runtime": "automatic",
         "refresh": true,
         "useBuiltins": true
+      },
+      "optimizer": {
+        "simplify": true
       }
     },
     "target": "es5",
