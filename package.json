@@ -12,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "@swc/core": "^1.7.40",
+    "html-webpack-plugin": "^5.6.3",
     "swc-loader": "^0.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",

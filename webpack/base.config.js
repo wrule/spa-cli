@@ -1,3 +1,4 @@
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { myPath, srcPath } from '../utils/myPath.js';
 
 export default {
@@ -18,4 +19,7 @@ export default {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin(),
+  ],
 };
