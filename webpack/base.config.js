@@ -5,6 +5,17 @@ export default {
   entry: srcPath('index.ts'),
   output: {
     path: myPath('dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|mjs|jsx|ts|tsx)$/i,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'swc-loader',
+        },
+      },
+    ],
   },
 };

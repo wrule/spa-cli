@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@swc/core": "^1.7.40",
+    "swc-loader": "^0.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "webpack": "^5.95.0",
