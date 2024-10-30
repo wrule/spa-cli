@@ -31,6 +31,13 @@
     // Requires v1.2.50 or upper and requires target to be es2016 or upper.
     "keepClassNames": true
   },
+  "module": {
+    "type": "es6",
+    "strict": true,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  },
   "minify": false,
   "sourceMaps": true
 }
