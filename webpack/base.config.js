@@ -7,6 +7,12 @@ export default {
     path: myPath('dist'),
     filename: 'index.js',
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs'],
+    alias: {
+      '@': myPath('src'),
+    },
+  },
   module: {
     rules: [
       {
