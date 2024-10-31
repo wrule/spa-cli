@@ -1,6 +1,9 @@
 import './App.css';
+import AI from './prompt';
 
 export default
 function App() {
-  return <div>你好，世界</div>;
+  return <div>
+    <AI />
+  </div>;
 }
