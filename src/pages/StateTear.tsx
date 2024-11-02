@@ -1,13 +1,13 @@
 import { useState, useTransition } from 'react';
 
-let bgColor = 'bg-blue-500';
+localStorage.bgColor = 'bg-blue-500';
 
 function getBgColor() {
-  return bgColor;
+  return localStorage.bgColor;
 }
 
 function setBgColor(color: string) {
-  bgColor = color;
+  localStorage.bgColor = color;
 }
 
 export default
