@@ -1,3 +1,4 @@
+import { useStateX } from '@/hooks/useStateX';
 import React, { useState } from 'react';
 
 let count = 0;
@@ -5,7 +6,7 @@ let count = 0;
 export default function Jotai() {
   console.log(`🐤 Render了 ${++count} 次`);
 
-  const [searchValue, setSearchValue] = useState({ kwd: '' });
+  const [searchValue, setSearchValue] = useStateX({ kwd: '' });
 
   const handleSearch = () => {
     setSearchValue({ kwd: '1' });
