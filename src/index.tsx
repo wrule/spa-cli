@@ -4,11 +4,12 @@ import App from '@/App';
 
 async function main() {
   createRoot(document.getElementById('root')!)
-    .render(
-      <StrictMode>
-        <App />
-      </StrictMode>,
-    );
+    .render(<App />);
+    // .render(
+    //   <StrictMode>
+    //     <App />
+    //   </StrictMode>,
+    // );
 }
 
 main();
