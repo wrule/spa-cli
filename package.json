@@ -41,6 +41,8 @@
     "framer-motion": "^11.11.10",
     "framer-motion-3d": "^11.2.0",
     "gsap": "^3.12.5",
+    "immer": "^10.1.1",
+    "jotai": "^2.10.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
