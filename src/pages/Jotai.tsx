@@ -5,7 +5,7 @@ let count = 0;
 export default function Jotai() {
   console.log(`🐤 Render了 ${++count} 次`);
 
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState({ kwd: '' });
 
   const handleSearch = () => {
 
@@ -15,15 +15,10 @@ export default function Jotai() {
     <div className="flex items-center justify-center w-full max-w-md gap-2 p-4">
       <input
         type="text"
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
+        value={searchValue.kwd}
+        onChange={(event) => setSearchValue({ kwd: event.target.value })}
         placeholder="Search..."
         className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
-        onKeyPress={(e) => {
-          if (e.key === 'Enter') {
-            handleSearch();
-          }
-        }}
       />
       <button
         onClick={handleSearch}
