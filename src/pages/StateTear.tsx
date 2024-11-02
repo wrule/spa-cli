@@ -28,7 +28,10 @@ function StateTear() {
     </div>
     <div>
       {loading ? <span>加载中...</span> : <ul>
-        {list.map((_, index) => <li key={index} className={(() => getBgColor())()}>{index}</li>)}
+        {list.map((_, index) => {
+          const bgColor = getBgColor();
+          return <li key={index} className={bgColor}>{index}</li>;
+        })}
       </ul>}
     </div>
   </div>;
