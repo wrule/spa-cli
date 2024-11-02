@@ -6,11 +6,13 @@ let count = 0;
 export default function Jotai() {
   console.log(`🐤 Render了 ${++count} 次`);
 
-  const [searchValue, setSearchValue] = useStateX({ kwd: '' });
+  const [searchValue, setSearchValue] = useStateX({ kwd: '1' });
 
   const handleSearch = () => {
     setSearchValue((draft) => {
-      draft.kwd = '1';
+      const value = (Math.random() * 3) < 1 ? '1' : '2';
+      console.log(value);
+      draft.kwd = value;
     });
   };
 
