@@ -1,6 +1,8 @@
 import { useState, useTransition } from 'react';
 
-const data = Array(160000).fill(0).map(() => Math.random().toString());
+let bgColor = 'bg-blue-500';
+
+const data = Array(50000).fill(0).map(() => Math.random().toString());
 
 export default
 function StateTear() {
@@ -32,7 +34,8 @@ function StateTear() {
         }}
       />
       <button onClick={() => {
-        setList([]);
+        bgColor = 'bg-red-500';
+        console.log(bgColor);
       }}>点我</button>
     </div>
     <div>
