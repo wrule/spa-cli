@@ -4,7 +4,6 @@ const data = Array(160000).fill(0).map(() => Math.random().toString());
 
 export default
 function StateTear() {
-  const [num, setNum] = useState<number>(0);
   const [list, setList] = useState<string[]>([]);
   const [loading, startTransition] = useTransition();
 
@@ -21,7 +20,6 @@ function StateTear() {
   const search2 = (keyword: string) => {
     startTransition(() => {
       search1(keyword);
-      setNum(1000);
     });
   };
 
@@ -33,9 +31,8 @@ function StateTear() {
           search2(event.target.value.trim());
         }}
       />
-      <span>{num}</span>
       <button onClick={() => {
-        setNum(100);
+        setList([]);
       }}>点我</button>
     </div>
     <div>
