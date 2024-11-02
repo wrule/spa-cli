@@ -1,9 +1,11 @@
 import React, { useState, useTransition } from 'react';
 
+let count = 0;
 const data = Array(40000).fill(0).map(() => Math.random().toString());
 
 export default
 function StateTear() {
+  const [num, setNum] = useState<number>(0);
   const [list, setList] = useState<string[]>([]);
   const [loading, startTransition] = useTransition();
 
@@ -19,7 +21,9 @@ function StateTear() {
 
   const search2 = (keyword: string) => {
     startTransition(() => {
+      const num = ++count;
       search1(keyword);
+      setNum(num);
     });
   };
 
@@ -29,8 +33,10 @@ function StateTear() {
         className="border-2"
         onChange={(event) => {
           search2(event.target.value.trim());
+          setNum(200);
         }}
       />
+      <span>{num}</span>
     </div>
     <div>
       {loading ? <span>加载中...</span> : <ul>
