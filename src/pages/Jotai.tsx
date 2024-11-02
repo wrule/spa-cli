@@ -30,6 +30,13 @@ export default function Jotai() {
         Search
       </button>
       <span className="ml-2">{searchValue.kwd}</span>
+      <button
+        className="px-6 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200 active:bg-blue-700 transition-all duration-200"
+        onClick={() => {
+          searchValue.kwd = 'haha';
+        }}>
+        Test
+      </button>
     </div>
   );
 }
