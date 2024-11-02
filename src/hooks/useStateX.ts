@@ -4,6 +4,6 @@ import { freeze, produce } from 'immer';
 export
 function useStateX<T>(initValue: T) {
   const [state, setState] = useState<T>(initValue);
-  const freezeState = freeze(initValue, true);
+  const freezeState = freeze(state, true);
   return [freezeState, setState];
 }
