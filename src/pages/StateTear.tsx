@@ -1,6 +1,6 @@
 import React, { useState, useTransition } from 'react';
 
-const data = Array(100000).fill(0).map(() => Math.random().toString());
+const data = Array(40000).fill(0).map(() => Math.random().toString());
 
 export default
 function StateTear() {
@@ -28,7 +28,7 @@ function StateTear() {
       <input
         className="border-2"
         onChange={(event) => {
-          search2(event.target.value.trim());
+          search1(event.target.value.trim());
         }}
       />
     </div>
