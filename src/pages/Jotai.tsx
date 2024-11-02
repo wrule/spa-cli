@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 
+let count = 0;
+
 export default function Jotai() {
+  console.log(`🐤 Render了 ${++count} 次`);
+
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearch = () => {
-    // 处理搜索逻辑
-    console.log('Searching for:', searchValue);
+
   };
 
   return (
