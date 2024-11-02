@@ -29,6 +29,7 @@ export default function Jotai() {
       >
         Search
       </button>
+      <span className="ml-2">{searchValue.kwd}</span>
     </div>
   );
 }
