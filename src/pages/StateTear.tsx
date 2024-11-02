@@ -9,10 +9,10 @@ function StateTear() {
 
   const search1 = (keyword: string) => {
     setList(() => {
-      console.log('计算开始 🚀');
+      console.log('计算开始 🚀', keyword);
       if (!keyword) return [];
       const result = data.filter((num) => num.includes(keyword));
-      console.log('计算结束 👌🏻');
+      console.log('计算结束 👌🏻', keyword);
       return result;
     });
   };
@@ -28,7 +28,7 @@ function StateTear() {
       <input
         className="border-2"
         onChange={(event) => {
-          search1(event.target.value.trim());
+          search2(event.target.value.trim());
         }}
       />
     </div>
