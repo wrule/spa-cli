@@ -8,7 +8,7 @@ export default function Jotai() {
   const [searchValue, setSearchValue] = useState({ kwd: '' });
 
   const handleSearch = () => {
-
+    setSearchValue({ kwd: '' });
   };
 
   return (
