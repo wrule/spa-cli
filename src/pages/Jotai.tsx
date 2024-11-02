@@ -29,3 +29,5 @@ export default function Jotai() {
     </div>
   );
 }
+
+Jotai.whyDidYouRender = true;
