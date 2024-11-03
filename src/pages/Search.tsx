@@ -2,6 +2,8 @@ import React, { useState, useTransition } from 'react';
 
 const data = Array(100000).fill(null).map((_, index) => index.toString());
 
+let inputValue = '';
+
 export default
 function Search() {
   const [list, setList] = useState<string[]>([]);
@@ -12,7 +14,7 @@ function Search() {
       <input
         className="border-solid border-2 rounded-md px-2 py-0.5 mr-1 border-blue-500"
         onChange={(event) => {
-          const inputValue = event.target.value.trim();
+          inputValue = event.target.value.trim();
           startTransition(() => {
             setList(() => {
               if (!inputValue) return [];
@@ -21,6 +23,9 @@ function Search() {
           });
         }}
       />
+      <button onClick={() => {
+        inputValue = '点我';
+      }}>点我</button>
     </div>
     <div>
       {loading ? <span>加载中...</span> : <ul className="border-solid border-2 rounded-md mt-3 min-h-56">
@@ -31,5 +36,9 @@ function Search() {
 }
 
 function Item(props: { value: string }) {
-  return <li className="px-2 py-1 border-b-2 last:border-b-0">{props.value}</li>;
+  return <li className="px-2 py-1 border-b-2 last:border-b-0">
+    <span>{props.value}</span>
+    <span> with </span>
+    <span>{inputValue}</span>
+  </li>;
 }
