@@ -7,14 +7,12 @@ function Search() {
   const [list, setList] = useState<string[]>([]);
   const [loading, startTransition] = useTransition();
 
-  let inputValue = '';
-
   return <div className="p-4">
     <div>
       <input
         className="border-solid border-2 rounded-md px-2 py-0.5 mr-1 border-blue-500"
         onChange={(event) => {
-          inputValue = event.target.value.trim();
+          const inputValue = event.target.value.trim();
           startTransition(() => {
             setList(() => {
               if (!inputValue) return [];
