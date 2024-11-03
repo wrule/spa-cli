@@ -1,6 +1,6 @@
 import React, { useState, useTransition } from 'react';
 
-const data = Array(30000).fill(null).map((_, index) => index.toString());
+const data = Array(100000).fill(null).map((_, index) => index.toString());
 
 export default
 function Search() {
