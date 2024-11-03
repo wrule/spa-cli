@@ -4,9 +4,6 @@ const data = Array(100000).fill(null).map((_, index) => index.toString());
 
 export default
 function Search() {
-  console.log('🐤 渲染了');
-
-  const [filter, setFilter] = useState({ search: '' });
   const [list, setList] = useState<string[]>([]);
   const [loading, startTransition] = useTransition();
 
@@ -26,19 +23,6 @@ function Search() {
           });
         }}
       />
-      {/* <button
-        className="bg-blue-500 text-white rounded-md px-2 py-1 mx-1"
-        onClick={() => {
-          // setFilter({ search: inputValue });
-          setList(() => {
-            return data.filter((str) => str.includes(inputValue));
-          });
-        }}>
-        搜索
-      </button> */}
-      {/* <button className="bg-yellow-500 text-white rounded-md px-2 py-1 mx-1">
-        切换颜色
-      </button> */}
     </div>
     <div>
       {loading ? <span>加载中...</span> : <ul className="border-solid border-2 rounded-md mt-3 min-h-56">
