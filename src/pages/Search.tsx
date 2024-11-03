@@ -18,9 +18,15 @@ function Search() {
         className="border-solid border-2 rounded-md px-2 py-0.5 mr-1 border-blue-500"
         onChange={(event) => {
           inputValue = event.target.value.trim();
+          startTransition(() => {
+            setList(() => {
+              if (!inputValue) return [];
+              return data.filter((str) => str.includes(inputValue));
+            });
+          });
         }}
       />
-      <button
+      {/* <button
         className="bg-blue-500 text-white rounded-md px-2 py-1 mx-1"
         onClick={() => {
           // setFilter({ search: inputValue });
@@ -29,10 +35,10 @@ function Search() {
           });
         }}>
         搜索
-      </button>
-      <button className="bg-yellow-500 text-white rounded-md px-2 py-1 mx-1">
+      </button> */}
+      {/* <button className="bg-yellow-500 text-white rounded-md px-2 py-1 mx-1">
         切换颜色
-      </button>
+      </button> */}
     </div>
     <div>
       {loading ? <span>加载中...</span> : <ul className="border-solid border-2 rounded-md mt-3 min-h-56">
@@ -43,5 +49,5 @@ function Search() {
 }
 
 function Item(props: { value: string }) {
-  return <li className="px-2 py-1 border-b-2 ">{props.value}</li>;
+  return <li className="px-2 py-1 border-b-2 last:border-b-0">{props.value}</li>;
 }
