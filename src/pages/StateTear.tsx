@@ -1,8 +1,10 @@
 import { useState, useTransition } from 'react';
+import { atom, useAtom } from 'jotai';
 
-let bgColor = 'bg-blue-500';
+const atomBgColor = atom('bg-blue-500');
 
 function Li(props: { index: number }) {
+  const [bgColor, setBgColor] = useAtom(atomBgColor);
   return (
     <li className={`${bgColor} p-3 rounded-md shadow-sm transition-all duration-200 hover:shadow-md flex items-center justify-between border border-gray-200`}>
       <span className="font-medium">#{props.index}</span>
@@ -15,6 +17,7 @@ export default
 function StateTear() {
   const [list, setList] = useState<string[]>([]);
   const [loading, startTransition] = useTransition();
+  const [bgColor, setBgColor] = useAtom(atomBgColor);
 
   return <div>
     <div>
@@ -29,10 +32,17 @@ function StateTear() {
       </button>
       <button
         onClick={() => {
-          bgColor = 'bg-red-500';
+          setBgColor('bg-red-500');
         }}
         className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-md">
         修改颜色
+      </button>
+      <button
+        onClick={() => {
+          setBgColor('bg-yellow-500');
+        }}
+        className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-md">
+        修改颜色2
       </button>
     </div>
     <div className="p-4">
