@@ -4,12 +4,19 @@ import { HelmetProvider } from 'react-helmet-async';
 import Button from '@mui/material/Button';
 import routes from '@/routes';
 
-export default
-function App() {
+export
+function AppRoutes() {
   const routing = useRoutes(routes);
   return (
+    <HelmetProvider>{routing}</HelmetProvider>
+  );
+}
+
+export default
+function App() {
+  return (
     <BrowserRouter>
-      <HelmetProvider>{routing}</HelmetProvider>
+      <AppRoutes />
     </BrowserRouter>
   );
 }
