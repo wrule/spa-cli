@@ -1,6 +1,6 @@
 import React, { useState, useTransition } from 'react';
 
-const data = Array(30000).fill(null).map(() => Math.random().toString());
+const data = Array(30000).fill(null).map((_, index) => index.toString());
 
 export default
 function Search() {
@@ -15,7 +15,7 @@ function Search() {
   return <div className="p-4">
     <div>
       <input
-        className="border-solid border-2 rounded-md px-2 py-0.5 border-blue-500"
+        className="border-solid border-2 rounded-md px-2 py-0.5 mr-1 border-blue-500"
         onChange={(event) => {
           inputValue = event.target.value.trim();
         }}
@@ -23,7 +23,10 @@ function Search() {
       <button
         className="bg-blue-500 text-white rounded-md px-2 py-1 mx-1"
         onClick={() => {
-          setFilter({ search: inputValue });
+          // setFilter({ search: inputValue });
+          setList(() => {
+            return data.filter((str) => str.includes(inputValue));
+          });
         }}>
         搜索
       </button>
@@ -32,13 +35,13 @@ function Search() {
       </button>
     </div>
     <div>
-      {loading ? <span>加载中...</span> : <ul>
-        {list.map((_, index) => <Item key={index} value={index} />)}
+      {loading ? <span>加载中...</span> : <ul className="border-solid border-2 rounded-md mt-3 min-h-56">
+        {list.map((str) => <Item key={str} value={str} />)}
       </ul>}
     </div>
   </div>;
 }
 
-function Item(props: { value: number }) {
-  return <li>{props.value}</li>;
+function Item(props: { value: string }) {
+  return <li className="px-2 py-1 border-b-2 ">{props.value}</li>;
 }
