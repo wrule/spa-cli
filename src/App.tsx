@@ -1,9 +1,15 @@
 import './App.css';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Button from '@mui/material/Button';
+import routes from '@/routes';
 
 export default
 function App() {
-  return <div>
-    <Button variant="contained">你好，世界</Button>
-  </div>;
+  const routing = useRoutes(routes);
+  return (
+    <BrowserRouter>
+      <HelmetProvider>{routing}</HelmetProvider>
+    </BrowserRouter>
+  );
 }
