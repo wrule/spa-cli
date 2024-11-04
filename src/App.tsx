@@ -5,11 +5,11 @@ import { HelmetProvider } from 'react-helmet-async';
 import routes from '@/routes';
 import { Button } from '@mui/material';
 import { useMemo, useState } from 'react';
+import ColorModeContext from './context/colorMode';
 
 export
 function AppRoutes() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
-  const routing = useRoutes(routes);
 
   const colorMode = useMemo(() => ({
     toggleColorMode: () => {
@@ -21,11 +21,15 @@ function AppRoutes() {
     palette: { mode },
   }), [mode]);
 
+  const routing = useRoutes(routes);
+
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <HelmetProvider>{routing}</HelmetProvider>
-      </ThemeProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <HelmetProvider>{routing}</HelmetProvider>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </StyledEngineProvider>
   );
 }
