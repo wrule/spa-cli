@@ -32,6 +32,13 @@ export default {
           'postcss-loader',
         ],
       },
+      {
+        test: /\.(svg|png|jpg|jpeg|webp|gif|ico|bmp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[contenthash:8][ext]',
+        },
+      },
     ],
   },
   plugins: [
