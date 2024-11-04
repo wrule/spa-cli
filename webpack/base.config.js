@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { myPath, srcPath } from '../utils/myPath.js';
 
 export default {
@@ -26,7 +27,7 @@ export default {
         test: /\.(css)$/i,
         exclude: /(node_modules)/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
         ],
@@ -39,5 +40,6 @@ export default {
       hash: true,
       // favicon: '',
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
