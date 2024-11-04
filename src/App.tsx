@@ -11,6 +11,12 @@ function AppRoutes() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
   const routing = useRoutes(routes);
 
+  const colorMode = useMemo(() => ({
+    toggleColorMode: () => {
+      setMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
+    },
+  }), []);
+
   const theme = useMemo(() => createTheme({
     palette: { mode },
   }), [mode]);
