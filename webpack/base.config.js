@@ -6,7 +6,8 @@ export default {
   entry: srcPath('index.tsx'),
   output: {
     path: myPath('dist'),
-    filename: 'index.js',
+    filename: 'scripts/[name].[contenthash:8].js',
+    chunkFilename: 'scripts/[name].chunk.[contenthash:8].js',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs'],
