@@ -15,5 +15,14 @@ export default [
     rules: {
       'react/react-in-jsx-scope': 'off',
     },
+    ignores: [
+      'node_modules/',
+      'dist/',
+    ],
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
 ];
