@@ -1,5 +1,5 @@
 
 export default
 function Home() {
-  return <div>主页</div>;
+  return <div className="bg-red-400">主页</div>;
 }
