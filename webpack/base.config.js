@@ -40,6 +40,9 @@ export default {
       hash: true,
       // favicon: '',
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash:8].css',
+      chunkFilename: 'styles/[name].chunk.[contenthash:8].css',
+    }),
   ],
 };
