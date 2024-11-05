@@ -22,7 +22,8 @@ export default {
   embeddedLanguageFormatting: 'auto', // 格式化嵌入的内容
   singleAttributePerLine: false, // HTML、Vue和JSX中的属性不强制每行只显示一个
   plugins: [], // 需要的插件列表
-  overrides: [ // 针对特定文件的配置
+  overrides: [
+    // 针对特定文件的配置
     {
       files: '*.md',
       options: {

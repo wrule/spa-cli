@@ -5,12 +5,11 @@ import App from '@/App';
 import { Button } from '@mui/material';
 
 async function main() {
-  createRoot(document.getElementById('root')!)
-    .render(
-      <StrictMode>
-        <App />
-      </StrictMode>,
-    );
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
 }
 
 main();

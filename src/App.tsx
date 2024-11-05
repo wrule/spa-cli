@@ -7,19 +7,25 @@ import { Button } from '@mui/material';
 import { useMemo, useState } from 'react';
 import ColorModeContext from './context/colorMode';
 
-export
-function AppRoutes() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
+export function AppRoutes() {
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
 
-  const colorMode = useMemo(() => ({
-    toggleColorMode: () => {
-      setMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
-    },
-  }), []);
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    []
+  );
 
-  const theme = useMemo(() => createTheme({
-    palette: { mode },
-  }), [mode]);
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: { mode },
+      }),
+    [mode]
+  );
 
   const routing = useRoutes(routes);
 
@@ -34,8 +40,7 @@ function AppRoutes() {
   );
 }
 
-export default
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <AppRoutes />

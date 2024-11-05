@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-export default
-function List() {
+export default function List() {
   return (
     <>
       <Helmet>

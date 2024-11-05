@@ -27,11 +27,7 @@ export default {
       {
         test: /\.(css)$/i,
         exclude: /(node_modules)/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(svg|png|jpg|jpeg|webp|gif|ico|bmp)$/i,
