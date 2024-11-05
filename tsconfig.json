@@ -112,5 +112,6 @@
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
     }
-  }
+  },
+  "include": ["src", "tests"],
 }

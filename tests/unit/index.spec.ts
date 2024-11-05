@@ -1,4 +1,4 @@
-import { twoSum } from '../../src/utils/index';
+import { twoSum } from '@/utils/index';
 
 describe('twoSum测试', () => {
   it('正常情况 - 数组中间的两个数', () => {
