@@ -11,7 +11,7 @@
     "lint:full": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "serve": "serve ./dist",
-    "test": "jest",
+    "test": "jest --collectCoverage --reporters default jest-stare",
     "prepare": "husky"
   },
   "author": "",
@@ -75,5 +75,9 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "jest-stare": {
+    "coverageLink": "./tests/docs/unit/coverage/lcov-report/index.html",
+    "resultDir": "./tests/docs/unit/coverage/jest-stare/"
   }
 }
