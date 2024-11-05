@@ -9,13 +9,15 @@ import pluginJest from 'eslint-plugin-jest';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+    ],
+  },
+  {
     files: [
       '**/*.{js,mjs,cjs,ts,jsx,tsx}',
-    ],
-    ignores: [
-      'node_modules/**',
-      'dist/**',
-      'build/**',
     ],
   },
   {
