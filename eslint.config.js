@@ -44,7 +44,8 @@ export default [
   pluginReact.configs.flat.recommended,
   {
     rules: {
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      'prettier/prettier': 'error',
     },
   },
 ];

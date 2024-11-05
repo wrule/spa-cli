@@ -9,7 +9,7 @@ import ColorModeContext from './context/colorMode';
 
 export
 function AppRoutes() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<'light' | 'dark'>('light')
 
   const colorMode = useMemo(() => ({
     toggleColorMode: () => {
