@@ -16,7 +16,7 @@ export function AppRoutes() {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
       },
     }),
-    []
+    [],
   );
 
   const theme = useMemo(
@@ -24,7 +24,7 @@ export function AppRoutes() {
       createTheme({
         palette: { mode },
       }),
-    [mode]
+    [mode],
   );
 
   const routing = useRoutes(routes);
