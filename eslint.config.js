@@ -37,7 +37,8 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
-  airbnbTypeScript,
+  // 暂时还不支持扁平化的规则配置
+  // airbnbTypeScript,
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
