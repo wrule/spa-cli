@@ -43,8 +43,8 @@ export default {
   removeUnusedImports: true,
   // 对HTML属性进行换行的方式
   singleAttributePerLine: true,
-  // 在JSX中使用单引号而不是双引号
-  jsxSingleQuote: true,
+  // 在JSX中使用双引号而不是单引号
+  jsxSingleQuote: false,
   // 对象属性是否使用引号
   quoteProps: 'as-needed',
   // 在文件末尾保留一个换行符
