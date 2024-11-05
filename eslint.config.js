@@ -5,6 +5,7 @@ import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginPrettier from 'eslint-plugin-prettier';
 import pluginJest from 'eslint-plugin-jest';
+import airbnbTypeScript from 'eslint-config-airbnb-typescript';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -36,6 +37,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  airbnbTypeScript,
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
