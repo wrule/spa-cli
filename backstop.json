@@ -16,9 +16,9 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "qqmap",
+      "label": "xsea",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "https://map.qq.com/m/",
+      "url": "http://10.10.31.20:8081/631385292498534400/product",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
