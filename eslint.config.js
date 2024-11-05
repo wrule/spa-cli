@@ -25,8 +25,6 @@ export default [
       globals: globals.browser,
     },
   },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
   {
     plugins: {
       'react-hooks': pluginReactHooks,
@@ -34,7 +32,6 @@ export default [
       jest: pluginJest,
     },
   },
-  pluginReact.configs.flat.recommended,
   {
     settings: {
       react: {
@@ -42,4 +39,7 @@ export default [
       },
     },
   },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
 ];
