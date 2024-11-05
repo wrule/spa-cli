@@ -3,7 +3,6 @@ import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { HelmetProvider } from 'react-helmet-async';
 import routes from '@/routes';
-import { Button } from '@mui/material';
 import { useMemo, useState } from 'react';
 import ColorModeContext from './context/colorMode';
 
