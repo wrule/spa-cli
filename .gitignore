@@ -1,4 +1,4 @@
 /node_modules/
 /dist/
-/tests/unit/docs/
+/tests/docs/
 /*.log
