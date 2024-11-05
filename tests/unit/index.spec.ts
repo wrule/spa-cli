@@ -1,4 +1,4 @@
-import { twoSum } from '@/utils';
+import { twoSum } from '../../src/utils/index';
 
 describe('twoSum的测试', () => {
   it('测试正常情况', () => {
