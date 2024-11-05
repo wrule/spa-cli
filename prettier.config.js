@@ -1,35 +1,54 @@
 export default {
-  printWidth: 100, // 每行代码长度
-  tabWidth: 2, // 每个缩进的空格数
-  useTabs: false, // 使用空格而不是tab缩进
-  semi: true, // 句末使用分号
-  singleQuote: true, // 使用单引号
-  quoteProps: 'as-needed', // 对象的key仅在必要时用引号
-  jsxSingleQuote: false, // jsx中使用双引号
-  trailingComma: 'es5', // 多行使用拖尾逗号
-  bracketSpacing: true, // 对象字面量的大括号间使用空格
-  bracketSameLine: false, // 将>放在最后一行的末尾，而不是单独放一行
-  arrowParens: 'always', // 箭头函数，只有一个参数的时候，也需要括号
-  rangeStart: 0, // 每个文件格式化的范围是文件的全部内容
-  rangeEnd: Infinity,
-  parser: undefined, // 格式化的解析器，默认是babylon
-  requirePragma: false, // 不需要写文件开头的 @prettier
-  insertPragma: false, // 不需要自动在文件开头插入 @prettier
-  proseWrap: 'preserve', // 使用默认的折行标准
-  htmlWhitespaceSensitivity: 'css', // 根据显示样式决定 html 要不要折行
-  vueIndentScriptAndStyle: false, // vue文件中的script和style内不用缩进
-  endOfLine: 'lf', // 换行符使用 lf
-  embeddedLanguageFormatting: 'auto', // 格式化嵌入的内容
-  singleAttributePerLine: false, // HTML、Vue和JSX中的属性不强制每行只显示一个
-  plugins: [], // 需要的插件列表
-  overrides: [
-    // 针对特定文件的配置
-    {
-      files: '*.md',
-      options: {
-        tabWidth: 2,
-        proseWrap: 'always',
-      },
-    },
+  // 在语句末尾添加分号
+  semi: true,
+  // 使用单引号代替双引号
+  singleQuote: true,
+  // 在对象或数组的最后一个元素后面添加逗号
+  trailingComma: 'all',
+  // 每行最大字符宽度
+  printWidth: 100,
+  // 指定每个缩进级别的空格数
+  tabWidth: 2,
+  // 使用空格而不是制表符进行缩进
+  useTabs: false,
+  // 在对象字面量的括号之间添加空格
+  bracketSpacing: true,
+  // jsx标签的'>'单独放一行
+  bracketSameLine: false,
+  // 箭头函数只有一个参数时添加括号
+  arrowParens: 'always',
+  // 文件顶部插入特殊注释标记，指定该文件不被格式化
+  requirePragma: false,
+  // 文件顶部插入@format标记
+  insertPragma: false,
+  // Markdown文本的换行方式
+  proseWrap: 'preserve',
+  // HTML文件中空格的处理方式
+  htmlWhitespaceSensitivity: 'css',
+  // Vue文件中script和style标签内的代码缩进
+  vueIndentScriptAndStyle: false,
+  // 行尾换行符使用lf
+  endOfLine: 'lf',
+  // 导入语句的排序方式
+  importOrder: [
+    '^react',
+    '^@core/(.*)$',
+    '^@server/(.*)$',
+    '^@ui/(.*)$',
+    '^[./]',
   ],
+  // 导入语句之间是否添加空行
+  importOrderSeparation: true,
+  // 是否移除导入语句中未使用的导入
+  removeUnusedImports: true,
+  // 对HTML属性进行换行的方式
+  singleAttributePerLine: true,
+  // 在JSX中使用单引号而不是双引号
+  jsxSingleQuote: true,
+  // 对象属性是否使用引号
+  quoteProps: 'as-needed',
+  // 在文件末尾保留一个换行符
+  endOfLine: 'lf',
+  // 嵌套块的缩进样式
+  embeddedLanguageFormatting: 'auto',
 };
