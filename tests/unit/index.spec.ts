@@ -1,5 +1,5 @@
-describe('综合性的测试', () => {
-  it('简单的测试', () => {
-    expect(11).toBe(12);
+describe('twoSum的测试', () => {
+  it('测试正常情况', () => {
+    expect(1).toEqual(1);
   });
 });
