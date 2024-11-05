@@ -12,6 +12,7 @@
     "lint:fix": "eslint ./src --fix",
     "serve": "serve ./dist",
     "test": "jest --collectCoverage --reporters default jest-stare",
+    "test:ui": "majestic",
     "prepare": "husky"
   },
   "author": "",
@@ -44,6 +45,7 @@
     "jest-stare": "^2.5.2",
     "lightningcss": "^1.28.1",
     "lint-staged": "^15.2.10",
+    "majestic": "^1.8.1",
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
