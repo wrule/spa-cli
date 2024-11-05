@@ -39,8 +39,8 @@
     "bitmaps_reference": "backstop_data/bitmaps_reference",
     "bitmaps_test": "backstop_data/bitmaps_test",
     "engine_scripts": "backstop_data/engine_scripts",
-    "html_report": "docs/backstop/html_report",
-    "ci_report": "docs/backstop/ci_report"
+    "html_report": "./tests/docs/ui-diff/html_report",
+    "ci_report": "./tests/docs/ui-diff/ci_report"
   },
   "report": ["browser"],
   "engine": "puppeteer",
