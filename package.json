@@ -13,6 +13,7 @@
     "serve": "serve ./dist",
     "test": "jest --collectCoverage --reporters default jest-stare",
     "test:ui": "majestic",
+    "test:uidiff": "backstop test",
     "prepare": "husky"
   },
   "author": "",
