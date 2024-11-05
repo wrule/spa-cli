@@ -7,8 +7,8 @@
     "clean": "rimraf dist",
     "dev": "webpack serve --config ./webpack/dev.config.js",
     "build": "npm run clean && webpack --config ./webpack/prod.config.js",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "serve": "serve ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
