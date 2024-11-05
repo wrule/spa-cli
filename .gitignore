@@ -1,4 +1,6 @@
 /node_modules/
 /dist/
 /tests/docs/
+/backstop_data/
+/docs/
 /*.log
