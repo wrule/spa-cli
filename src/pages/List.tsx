@@ -14,6 +14,11 @@ const List = () => {
       draft.b = 123;
     });
     console.log(a, b, a === b);
+    const func = produce<typeof a>((draft) => {
+      draft.b = 123;
+    });
+    const c = func(b);
+    console.log(c, c === b);
   });
 
   return (
