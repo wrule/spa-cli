@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 let count = 0;
 
-export default function List() {
+const List = () => {
   console.log(`🐤 渲染了 ${++count} 次`);
   const [filter, setFilter] = useState({ search: '' });
 
@@ -31,4 +31,8 @@ export default function List() {
       </div>
     </>
   );
-}
+};
+
+List.whyDidYouRender = true;
+
+export default List;
