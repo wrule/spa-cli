@@ -1,11 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { produce } from 'immer';
 
 let count = 0;
 
 const List = () => {
   console.log(`🐤 渲染了 ${++count} 次`);
   const [filter, setFilter] = useState({ search: '' });
+
+  useEffect(() => {
+    const a = { b: 123 };
+    const b = produce(a, (draft) => {
+      draft.b = 123;
+    });
+    console.log(a, b, a === b);
+  });
 
   return (
     <>
