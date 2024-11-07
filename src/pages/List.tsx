@@ -8,19 +8,6 @@ const List = () => {
   console.log(`🐤 渲染了 ${++count} 次`);
   const [filter, setFilter] = useState({ search: '' });
 
-  // useEffect(() => {
-  //   const a = { b: 123 };
-  //   const b = produce(a, (draft) => {
-  //     draft.b = 123;
-  //   });
-  //   console.log(a, b, a === b);
-  //   const func = produce<typeof a>((draft) => {
-  //     draft.b = 123;
-  //   });
-  //   const c = func(b);
-  //   console.log(c, c === b);
-  // });
-
   return (
     <>
       <Helmet>
@@ -34,7 +21,13 @@ const List = () => {
           />
           <button
             className="ml-3 px-2 py-1.5 bg-blue-500 text-white rounded-md"
-            onClick={() => setFilter({ search: '' })}
+            onClick={() => {
+              setFilter(
+                produce(filter, (draft) => {
+                  draft.search = '1';
+                }),
+              );
+            }}
           >
             搜索
           </button>
