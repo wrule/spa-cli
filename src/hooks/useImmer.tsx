@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { freeze, produce, Draft } from 'immer';
-import { Dispatch, SetStateAction, useState } from 'react';
 
-type Updater<S> = (Draft: S) => void;
+type Updater<S> = (draft: Draft<S>) => void;
 
 function useImmer<S>(initialState: S | (() => S)): [S, (updater: Updater<S>) => void] {
   const [state, setState] = useState(() => {
