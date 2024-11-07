@@ -14,7 +14,7 @@ Routes.push({
   children: [
     {
       path: '/',
-      element: <List />,
+      element: <Home />,
     },
     {
       path: 'list',
