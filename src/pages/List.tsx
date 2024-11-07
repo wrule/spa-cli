@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { produce } from 'immer';
-import useImmer from '@/hooks/useImmer';
+import { useImmer } from 'use-immer';
 
 let count = 0;
 
