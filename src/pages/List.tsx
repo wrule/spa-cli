@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { produce } from 'immer';
+import { useImmer } from '@/hooks/useImmer';
 
 let count = 0;
 
 const List = () => {
-  console.log(`🐤 渲染了 ${++count} 次`);
   const [filter, setFilter] = useState({ search: '' });
+
+  console.log(`🐤 渲染了 ${++count} 次`, filter);
 
   return (
     <>
@@ -22,11 +24,9 @@ const List = () => {
           <button
             className="ml-3 px-2 py-1.5 bg-blue-500 text-white rounded-md"
             onClick={() => {
-              setFilter(
-                produce(filter, (draft) => {
-                  draft.search = '1';
-                }),
-              );
+              setFilter({
+                search: '1',
+              });
             }}
           >
             搜索
