@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { produce } from 'immer';
 
@@ -8,18 +8,18 @@ const List = () => {
   console.log(`🐤 渲染了 ${++count} 次`);
   const [filter, setFilter] = useState({ search: '' });
 
-  useEffect(() => {
-    const a = { b: 123 };
-    const b = produce(a, (draft) => {
-      draft.b = 123;
-    });
-    console.log(a, b, a === b);
-    const func = produce<typeof a>((draft) => {
-      draft.b = 123;
-    });
-    const c = func(b);
-    console.log(c, c === b);
-  });
+  // useEffect(() => {
+  //   const a = { b: 123 };
+  //   const b = produce(a, (draft) => {
+  //     draft.b = 123;
+  //   });
+  //   console.log(a, b, a === b);
+  //   const func = produce<typeof a>((draft) => {
+  //     draft.b = 123;
+  //   });
+  //   const c = func(b);
+  //   console.log(c, c === b);
+  // });
 
   return (
     <>
