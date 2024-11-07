@@ -10,13 +10,6 @@ const List = () => {
 
   console.log(`🐤 渲染了 ${++count} 次`, filter);
 
-  const handleClick = useCallback(
-    (search: string) => {
-      setFilter({ search: '1' });
-    },
-    [filter],
-  );
-
   return (
     <>
       <Helmet>
@@ -31,7 +24,9 @@ const List = () => {
           <button
             className="ml-3 px-2 py-1.5 bg-blue-500 text-white rounded-md"
             onClick={() => {
-              handleClick('1');
+              setFilter((draft) => {
+                draft.search = '1';
+              });
             }}
           >
             搜索
