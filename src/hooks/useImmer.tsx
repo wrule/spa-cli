@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { freeze, produce, Draft } from 'immer';
 
 type Updater<S> = (draft: Draft<S>) => void;
@@ -13,12 +13,15 @@ function useImmer<S>(initialState: S | (() => S)): [S, (updater: Updater<S>) => 
     }
     return freeze(stateValue, true);
   });
-  const setStateProduce = (updater: Updater<S>) => {
-    const nextState = produce(state, updater);
-    if (nextState !== state) {
-      setState(nextState);
-    }
-  };
+  const setStateProduce = useCallback(
+    (updater: Updater<S>) => {
+      const nextState = produce(state, updater);
+      if (nextState !== state) {
+        setState(nextState);
+      }
+    },
+    [state],
+  );
   return [state, setStateProduce];
 }
 
