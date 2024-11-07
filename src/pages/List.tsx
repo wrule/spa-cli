@@ -15,7 +15,6 @@ const List = () => {
       const newFilter = produce(filter, (draft) => {
         draft.search = search;
       });
-      console.log(newFilter === filter);
       setFilter(newFilter);
     },
     [filter],
