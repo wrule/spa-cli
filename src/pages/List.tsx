@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { produce } from 'immer';
 import { useImmer } from '@/hooks/useImmer';
@@ -9,6 +9,8 @@ const List = () => {
   const [filter, setFilter] = useState({ search: '' });
 
   console.log(`🐤 渲染了 ${++count} 次`, filter);
+
+  const handleClick = useCallback((search: string) => {}, []);
 
   return (
     <>
